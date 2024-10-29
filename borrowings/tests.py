@@ -18,7 +18,7 @@ BORROWING_URL = reverse("borrowings:borrowing-list")
 
 def sample_borrowing(user, book, **params):
     defaults = {
-        "expected_return_date": "2024-10-29",
+        "expected_return_date": timezone.now().date() + timedelta(days=1),
         "book": book.id,
         "user": user.id
     }
